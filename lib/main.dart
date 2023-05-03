@@ -5,10 +5,14 @@ import 'package:folio/constants.dart';
 import 'package:folio/carousel.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
+import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); // Initialize Firebase
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
