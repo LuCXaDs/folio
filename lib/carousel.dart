@@ -40,13 +40,14 @@ class _SiteState extends State<Site> {
           carouselController: _carouselController,
           options: CarouselOptions(
             onPageChanged: onPageChanged,
-            height: double.infinity,
+            height: screeheightsize,
             scrollDirection: Axis.vertical,
             enableInfiniteScroll: false,
             viewportFraction: 1.0,
             // enlargeCenterPage: true,
             pageSnapping: true,
             scrollPhysics: const PageScrollPhysics(),
+        
           ),
           items: [
             const HomePage(),
@@ -59,11 +60,15 @@ class _SiteState extends State<Site> {
                   children: [
                     Expanded(
                       flex: _isHoveredLeft ? 2 : 1,
-                      child: Container(
-                        height: _isHoveredRight || _isHoveredMiddle
+                      child: AnimatedContainer(
+                        height: _isHoveredMiddle
                             ? screeheightsize / 1.5
-                            : screeheightsize,
+                            : _isHoveredRight
+                                ? screeheightsize / 1.7
+                                : screeheightsize,
                         margin: const EdgeInsets.all(10),
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInToLinear,
                         child: MouseRegion(
                           onEnter: (event) {
                             setState(() {
@@ -111,11 +116,13 @@ class _SiteState extends State<Site> {
                     ),
                     Expanded(
                       flex: _isHoveredMiddle ? 2 : 1,
-                      child: Container(
+                      child: AnimatedContainer(
                         height: _isHoveredRight || _isHoveredLeft
                             ? screeheightsize / 1.5
                             : screeheightsize,
                         margin: const EdgeInsets.all(10),
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInToLinear,
                         child: MouseRegion(
                           onEnter: (event) {
                             setState(() {
@@ -163,11 +170,15 @@ class _SiteState extends State<Site> {
                     ),
                     Expanded(
                       flex: _isHoveredRight ? 2 : 1,
-                      child: Container(
-                        height: _isHoveredLeft || _isHoveredMiddle
+                      child: AnimatedContainer(
+                        height: _isHoveredMiddle
                             ? screeheightsize / 1.5
-                            : screeheightsize,
+                            : _isHoveredLeft
+                                ? screeheightsize / 1.7
+                                : screeheightsize,
                         margin: const EdgeInsets.all(10),
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInToLinear,
                         child: MouseRegion(
                           onEnter: (event) {
                             setState(() {

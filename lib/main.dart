@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:folio/constants.dart';
 import 'package:folio/carousel.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
+
 
 
 void main() {
@@ -95,7 +97,25 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Site(),
+      body:  ScrollBar(),
+    );
+  }
+}
+
+
+
+class ScrollBar extends StatelessWidget {
+   ScrollBar({super.key});
+
+// final ScrollController _scrollController = ScrollController();
+
+  @override
+  Widget build(BuildContext context) {
+    final double screeheightsize = MediaQuery.of(context).size.height;
+    return  Scrollbar(
+      isAlwaysShown: true,
+      controller: ScrollController(),
+      child: const Site(),
     );
   }
 }
