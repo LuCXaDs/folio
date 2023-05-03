@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -43,41 +46,31 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBiYiDitW-cxHpMLG0e4Hl0Ih9rxVTCF3U',
-    appId: '1:550732800185:web:171e7af82093462241fb68',
-    messagingSenderId: '550732800185',
-    projectId: 'portfolio-c1fdc',
-    authDomain: 'portfolio-c1fdc.firebaseapp.com',
-    storageBucket: 'portfolio-c1fdc.appspot.com',
-    measurementId: 'G-S3H2EME8GR',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDg-KwkUIwUNW7AIlXuVPjJUWGqU_-jf1Q',
-    appId: '1:550732800185:android:d1f8ac84bfba908041fb68',
-    messagingSenderId: '550732800185',
-    projectId: 'portfolio-c1fdc',
-    storageBucket: 'portfolio-c1fdc.appspot.com',
+    apiKey: 'AIzaSyCy3FtEqV9TQsNfjyG761FtHc75_j2ggYA',
+    appId: '1:561389227109:android:59ef8fbe2cf4050737ca8c',
+    messagingSenderId: '561389227109',
+    projectId: 'folio-4265a',
+    storageBucket: 'folio-4265a.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCx_GR-ia-Qd3yh4_6oMIAUsqMdGsrjtV0',
-    appId: '1:550732800185:ios:123168b56ca68b4e41fb68',
-    messagingSenderId: '550732800185',
-    projectId: 'portfolio-c1fdc',
-    storageBucket: 'portfolio-c1fdc.appspot.com',
-    iosClientId: '550732800185-jfna4okpd5cltp7ttel6f4j1ddn4hntt.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBWUGXAkyhFu2sA-pE9jPzn_fZp9cQjxB0',
+    appId: '1:561389227109:ios:f59e19a6a67adf6b37ca8c',
+    messagingSenderId: '561389227109',
+    projectId: 'folio-4265a',
+    storageBucket: 'folio-4265a.appspot.com',
+    iosClientId: '561389227109-vt6e80cstu589b73ek776bmp1obhi1mj.apps.googleusercontent.com',
     iosBundleId: 'com.example.folio',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCx_GR-ia-Qd3yh4_6oMIAUsqMdGsrjtV0',
-    appId: '1:550732800185:ios:123168b56ca68b4e41fb68',
-    messagingSenderId: '550732800185',
-    projectId: 'portfolio-c1fdc',
-    storageBucket: 'portfolio-c1fdc.appspot.com',
-    iosClientId: '550732800185-jfna4okpd5cltp7ttel6f4j1ddn4hntt.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBWUGXAkyhFu2sA-pE9jPzn_fZp9cQjxB0',
+    appId: '1:561389227109:ios:f59e19a6a67adf6b37ca8c',
+    messagingSenderId: '561389227109',
+    projectId: 'folio-4265a',
+    storageBucket: 'folio-4265a.appspot.com',
+    iosClientId: '561389227109-vt6e80cstu589b73ek776bmp1obhi1mj.apps.googleusercontent.com',
     iosBundleId: 'com.example.folio',
   );
 }
